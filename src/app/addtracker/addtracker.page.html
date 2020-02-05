@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>New Timer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Title of your task</ion-label>
+        <ion-input type="text" placeholder="Enter a task name..." name="name" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Select a subject</ion-label>
+        <ion-select placeholder="select a category" formControlName="category">
+          <ion-select-option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="full" color="tertiary" *ngIf="!started" (click)="start()" [disabled]="!taskForm.valid">Start</ion-button>
+      <ion-button expand="full" color="secondary" *ngIf="started" (click)="stop()">Stop</ion-button>
+
+      <ion-item *ngIf="started">
+        {{time | timeformat }}
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="close()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

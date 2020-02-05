@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Time Tracker</ion-title>
+  </ion-toolbar>
+  <ion-searchbar color="medium" (ionInput)="filterTrackers( $event )" (ionCancel)="restoreTrackers()" debounce="1000" placeholder="Search my trackers"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary" (click)="addTracker()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let note of notes" size="6" (click)="getTrackerDetail(tracker)">
+        <ion-card color="light">
+        <ion-card-header>
+          <ion-card-title>{{tracker.name}}</ion-card-title>
+          <ion-card-subtitle>{{tracker.date.toDate() | date: 'd/M/yyyy HH:mm'}}</ion-card-subtitle>
+        </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
