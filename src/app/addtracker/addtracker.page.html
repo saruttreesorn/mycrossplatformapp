@@ -26,7 +26,7 @@
       <ion-button expand="full" color="secondary" *ngIf="started" (click)="stop()">Stop</ion-button>
 
       <ion-item *ngIf="started">
-        {{time: "hh/mm/ss" | date: "dd/MM/yyyy" }}
+        {{time | date: "dd/MM/yyyy" }}
       </ion-item>
       
     </ion-list>
