@@ -28,7 +28,20 @@
       <ion-item *ngIf="started">
         {{time | date: "dd/MM/yyyy" }}
       </ion-item>
-      
+
+      <ion-tabs>
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="tracker">
+            <ion-icon name="stopwatch"></ion-icon>
+            <ion-label>Start tracking</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="categories">
+              <ion-icon name="funnel"></ion-icon>
+              <ion-label>Subjects</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+
     </ion-list>
   </form>
 </ion-content>

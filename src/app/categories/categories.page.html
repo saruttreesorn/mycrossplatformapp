@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Create a new subject category</ion-title>
+    <ion-title>Create a new category</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,8 +8,8 @@
   <form id="category-form" [formGroup]="categoryForm">
     <ion-list>
       <ion-item>
-        <ion-label position="stacked"></ion-label>
-        <ion-input type="text" placeholder="New subject name ..." formControlName="name"></ion-input>
+        <ion-label position="stacked">New category name</ion-label>
+        <ion-input type="text" placeholder="New category name ..." formControlName="name"></ion-input>
       </ion-item>
       <ion-button type="submit" expand="full" [disabled]="!categoryForm.valid" (click)="addCategory()">Add new subject</ion-button>
     </ion-list>
