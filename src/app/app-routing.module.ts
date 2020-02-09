@@ -58,6 +58,10 @@ const routes: Routes = [
   {
     path: 'categories',
     loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
+  },
+  {
+    path: 'googlemap',
+    loadChildren: () => import('./googlemap/googlemap.module').then( m => m.GooglemapPageModule)
   }
 
 ];

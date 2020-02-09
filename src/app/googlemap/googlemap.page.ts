@@ -1,25 +1,23 @@
-import { Component, OnInit, ViewChildren } from '@angular/core';
-import { google } from 'google-maps';
+import { Component, ViewChildren, OnInit } from '@angular/core';
+
 
 @Component({
-  selector: 'app-google-map',
-  templateUrl: './google-map.component.html',
-  styleUrls: ['./google-map.component.scss'],
+  selector: 'app-googlemap',
+  templateUrl: './googlemap.page.html',
+  styleUrls: ['./googlemap.page.scss'],
 })
-export class GoogleMapComponent implements OnInit {
+export class GooglemapPage implements OnInit {
 
   @ViewChildren("map") mapElement;
   map: any;
+
   constructor() { }
 
   ngOnInit() {
-  }
-
-  ionViewDidLoad(){
     this.initMap();
   }
 
-  initMap() {
+  initMap(){
     let coords = new google.maps.LatLng(-35.473469, 149.012375);
     let mapOptions: google.maps.MapOptions = {
       center: coords,
@@ -35,5 +33,4 @@ export class GoogleMapComponent implements OnInit {
         position: coords
       })
   }
-
 }

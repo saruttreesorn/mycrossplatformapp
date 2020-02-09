@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Map is great!!!..if it works T3T</ion-title>
+  </ion-toolbar>
+  <ion-searchbar color="medium" (ionInput)="filterNotes( $event )" (ionCancel)="restoreNotes()" debounce="1000" placeholder="Search notes"></ion-searchbar>
+
+
+  <div #map id="map">
+  </div>
+
+
+
+
+</ion-header>
