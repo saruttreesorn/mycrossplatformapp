@@ -25,12 +25,12 @@ import { TrackerDetailPageModule } from './tracker-detail/tracker-detail.module'
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AddtrackerPageModule } from './addtracker/addtracker.module';
 
-import { GoogleMapComponent } from './googlemap/google-map.component';
+import { GooglemapPageModule } from './googlemap/googlemap.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GoogleMapComponent
+    GooglemapPageModule
   ],
   entryComponents: [
     
