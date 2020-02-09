@@ -25,9 +25,16 @@ import { TrackerDetailPageModule } from './tracker-detail/tracker-detail.module'
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AddtrackerPageModule } from './addtracker/addtracker.module';
 
+import { GoogleMapComponent } from './google-map/google-map.component';
+
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [
+    AppComponent,
+    GoogleMapComponent
+  ],
+  entryComponents: [
+    
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -40,7 +47,7 @@ import { AddtrackerPageModule } from './addtracker/addtracker.module';
     AddPageModule,
     NoteDetailPageModule,
     TrackerDetailPageModule,
-    AddtrackerPageModule
+    AddtrackerPageModule,
   ],
   providers: [
     StatusBar,

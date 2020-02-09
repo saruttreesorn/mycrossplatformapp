@@ -47,7 +47,7 @@ export class AppComponent {
         this.appPages = [
           {title: 'Notes' , url: '/notes', icon: 'home'},
           {title: 'Timer' , url: '/tracker', icon: 'clock'},
-          {title: 'Map' , url: '/map', icon: 'compass'},
+          {title: 'Map' , url: '/google-map', icon: 'compass'},
           {title: 'Settings' , url: '/settings', icon: 'settings'}
         ]
         this.user = user;
