@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren } from '@angular/core';
-
+import { google } from 'google-maps';
 
 @Component({
   selector: 'app-google-map',
@@ -13,6 +13,9 @@ export class GoogleMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ionViewDidLoad(){
     this.initMap();
   }
 
@@ -31,9 +34,6 @@ export class GoogleMapComponent implements OnInit {
         map: this.map,
         position: coords
       })
-
-
-
   }
 
 }
