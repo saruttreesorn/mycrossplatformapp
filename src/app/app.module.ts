@@ -30,7 +30,6 @@ import { GooglemapPageModule } from './googlemap/googlemap.module';
 @NgModule({
   declarations: [
     AppComponent,
-    GooglemapPageModule
   ],
   entryComponents: [
     
