@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, wtfStartTimeRange } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @Component({
@@ -16,10 +17,15 @@ export class CalendarPage implements OnInit {
   };
 
 
-
-
-  constructor() { 
-
+  constructor(private db: AngularFirestore) { 
+    this.db.collection(`events`).snapshotChanges().subscribe(colSnap => {
+      this.eventSource = [];
+      colSnap.forEach(snap => {
+        let event:any = snap.payload.doc.data();
+        event.id = snap.payload.doc.id;
+        this.eventSource.push(event);
+      });
+    });
   }
 
   ngOnInit() {
@@ -27,6 +33,23 @@ export class CalendarPage implements OnInit {
   }
 
   //functions
+  addNewEvent() {
+    let start = new Date();
+    let end = new Date();
+    end.setMinutes(end.getMinutes() + 60);
+
+    let event = {
+      title: 'Event #' + start.getMinutes(),
+      startTime: start,
+      endTime: end,
+      allDay: false
+    }
+
+    this.db.collection(`events`).add(event);
+  }
+
+
+
   onViewTitleChanged(title) {
     console.log(title);
   }
