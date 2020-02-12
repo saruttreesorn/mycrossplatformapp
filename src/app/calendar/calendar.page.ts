@@ -16,6 +16,8 @@ export class CalendarPage implements OnInit {
     currentDate: new Date(),
   };
 
+  selectedDate = new Date();
+
 
   constructor(private db: AngularFirestore) { 
     this.db.collection(`events`).snapshotChanges().subscribe(colSnap => {
@@ -23,6 +25,9 @@ export class CalendarPage implements OnInit {
       colSnap.forEach(snap => {
         let event:any = snap.payload.doc.data();
         event.id = snap.payload.doc.id;
+        event.startTime = event.startTime.toDate();
+        event.endTime = event.endTime.toDate();
+        console.log(event);
         this.eventSource.push(event);
       });
     });
@@ -34,8 +39,8 @@ export class CalendarPage implements OnInit {
 
   //functions
   addNewEvent() {
-    let start = new Date();
-    let end = new Date();
+    let start = this.selectedDate;
+    let end = this.selectedDate;
     end.setMinutes(end.getMinutes() + 60);
 
     let event = {
@@ -60,6 +65,7 @@ export class CalendarPage implements OnInit {
 
   onTimeSelected(ev) {
     console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' + (ev.events !== undefined && ev.events.length !== 0) + ', disabled: ' + ev.disabled);
+    this.selectedDate = ev.selectedTime;
   }
 
   onCurrentDateChange(event: Date) {
