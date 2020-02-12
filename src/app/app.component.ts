@@ -45,10 +45,10 @@ export class AppComponent {
     this.afAuth.authState.subscribe(( user ) => {
       if( user ) {
         this.appPages = [
-          {title: 'Notes' , url: '/notes', icon: 'home'},
-          {title: 'Timer' , url: '/tracker', icon: 'clock'},
+          {title: 'Notes' , url: '/notes', icon: 'paper'},
           {title: 'Calendar' , url: '/calendar', icon: 'calendar'},
-          {title: 'Map' , url: '/map', icon: 'compass'},
+          {title: 'Geolocation' , url: '/geolocation', icon: 'compass'},
+          {title: 'Timer' , url: '/tracker', icon: 'clock'},
           {title: 'Settings' , url: '/settings', icon: 'settings'}
         ]
         this.user = user;
