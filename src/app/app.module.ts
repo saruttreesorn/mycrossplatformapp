@@ -26,7 +26,9 @@ import { TrackerDetailPageModule } from './tracker-detail/tracker-detail.module'
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AddtrackerPageModule } from './addtracker/addtracker.module';
 //calendar
-import { NgCalendarModule } from 'ionic2-calendar'; 
+import { NgCalendarModule } from 'ionic2-calendar';
+//geolocation
+import { Geolocation } from '@ionic-native/geolocation/ngx'
 
 
 
@@ -58,6 +60,8 @@ import { NgCalendarModule } from 'ionic2-calendar';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     // camera provider
     Camera,
+    //Geolocation
+    Geolocation
   ],
   bootstrap: [AppComponent]
 })
