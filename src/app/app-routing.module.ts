@@ -44,10 +44,6 @@ const routes: Routes = [
     loadChildren: () => import('./addtracker/addtracker.module').then( m => m.AddtrackerPageModule)
   },
   {
-    path: 'map',
-    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
-  },
-  {
     path: 'tracker-detail',
     loadChildren: () => import('./tracker-detail/tracker-detail.module').then( m => m.TrackerDetailPageModule)
   },
@@ -58,10 +54,6 @@ const routes: Routes = [
   {
     path: 'categories',
     loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
-  },
-  {
-    path: 'googlemap',
-    loadChildren: () => import('./googlemap/googlemap.module').then( m => m.GooglemapPageModule)
   },
   {
     path: 'calendar',

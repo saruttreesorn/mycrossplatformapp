@@ -25,12 +25,10 @@ import { TrackerDetailPageModule } from './tracker-detail/tracker-detail.module'
 // camera 
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AddtrackerPageModule } from './addtracker/addtracker.module';
-
+//calendar
 import { NgCalendarModule } from 'ionic2-calendar'; 
 
-//google map 
-import { GooglemapPageModule } from './googlemap/googlemap.module';
-import { CalendarPageModule } from './calendar/calendar.module';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +50,7 @@ import { CalendarPageModule } from './calendar/calendar.module';
     NoteDetailPageModule,
     TrackerDetailPageModule,
     AddtrackerPageModule,
-    NgCalendarModule
+    NgCalendarModule,
   ],
   providers: [
     StatusBar,
