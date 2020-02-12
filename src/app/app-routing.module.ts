@@ -62,6 +62,10 @@ const routes: Routes = [
   {
     path: 'googlemap',
     loadChildren: () => import('./googlemap/googlemap.module').then( m => m.GooglemapPageModule)
+  },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
   }
 
 ];
