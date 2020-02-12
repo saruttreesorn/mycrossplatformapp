@@ -31,6 +31,7 @@
     "@types/googlemaps": "^3.39.2",
     "cordova-android": "8.1.0",
     "cordova-ios": "^5.1.1",
+    "cordova-plugin-calendar": "^5.1.5",
     "cordova-plugin-camera": "^4.1.0",
     "core-js": "^2.5.4",
     "firebase": "^7.8.1",
@@ -83,7 +84,11 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-calendar": {
+        "CALENDAR_USAGE_DESCRIPTION": " ",
+        "CONTACTS_USAGE_DESCRIPTION": " "
+      }
     },
     "platforms": [
       "ios",
