@@ -3,13 +3,13 @@ ion-content {
     display: flex;
     justify-content: center;
     .logo{
-      max-width: 50vw;
-      max-height: 20vw;
+      max-width: 80vw;
+      max-height: 40vw;
       margin-top: 2rem;
     }
   }
   form {
-    margin-top: 3rem;
+    margin-top: 2rem;
     ion-list {
       .button-center {
         display: flex;
