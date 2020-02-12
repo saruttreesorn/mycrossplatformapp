@@ -9,10 +9,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+//storage /firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestore} from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 // modal imports
@@ -25,7 +27,11 @@ import { TrackerDetailPageModule } from './tracker-detail/tracker-detail.module'
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AddtrackerPageModule } from './addtracker/addtracker.module';
 
+import { NgCalendarModule } from 'ionic2-calendar'; 
+
+//google map 
 import { GooglemapPageModule } from './googlemap/googlemap.module';
+import { CalendarPageModule } from './calendar/calendar.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,7 @@ import { GooglemapPageModule } from './googlemap/googlemap.module';
     AppRoutingModule,
     AngularFireModule.initializeApp( environment.firebase ),
     AngularFireAuthModule,
+    AngularFirestore,
     AngularFirestoreModule,
     AngularFireStorageModule,
     SignupPageModule,
@@ -47,13 +54,14 @@ import { GooglemapPageModule } from './googlemap/googlemap.module';
     NoteDetailPageModule,
     TrackerDetailPageModule,
     AddtrackerPageModule,
+    NgCalendarModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     // camera provider
-    Camera
+    Camera,
   ],
   bootstrap: [AppComponent]
 })
